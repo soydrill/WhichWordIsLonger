@@ -3,10 +3,52 @@
 
 #include "pch.h"
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+    
+	string word1 = "", word2 = "";
+	string answer = "";
+	bool keepgoing = true;
+	while (keepgoing == true)
+	{
+		cout << "\n\n  Enter a word (or really, a series of continuous characters): ";
+		cin >> word1;
+		cout << "\n\n  Enter another word (or really, a series of continous characters): ";
+		cin >> word2;
+
+		if (word1.length() > word2.length())
+		{
+			cout << "\n\n  The first word you entered, " << word1 << ", is longer than the second, ";
+			cout << "with a grand total length of " << word1.length() << " characters.";
+		}
+
+		if (word1.length() < word2.length())
+		{
+			cout << "\n\n  The second word you entered, " << word2 << ", is longer than the first, ";
+			cout << "with a grand total length of " << word2.length() << " characters.";
+		}
+
+		if (word1.length() == word2.length())
+		{
+			cout << "\n\n  Both of the words you entered are the same length, with a length of " << word1.length() << " characters!";
+		}
+
+		cout << "\n\n\n  Would you like to compare the length of two more words (Y/N)? ";
+		cin >> answer;
+		cout << "\n\n  ------------------------------------------------------------------------------------------ \n\n";
+
+		if (answer == "n" || answer == "N")
+		{
+			keepgoing = false;
+		}
+
+	}
+	return 0;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
