@@ -13,26 +13,31 @@ int main()
 	string word1 = "", word2 = "";
 	string answer = "";
 	bool keepgoing = true;
-	while (keepgoing == true)
+	while (keepgoing)
 	{
-		cout << "\n\n  Enter a word (or really, a series of continuous characters): ";
-		cin >> word1;
-		cout << "\n\n  Enter another word (or really, a series of continous characters): ";
-		cin >> word2;
+		//cout << "\n\n  Enter a word (or really, a series of continuous characters with NO spaces): ";
+		//cin >> word1;
+		//cout << "\n\n  Enter another word (or really, a series of continous characters with NO spaces): ";
+		//cin >> word2;
+
+		cout << "\n\n  Enter a phrase: ";
+		getline(cin, word1);
+		cout << "\n\n  Enter another word (or really, a series of continous characters with NO spaces): ";
+		getline(cin, word2);
 
 		if (word1.length() > word2.length())
 		{
-			cout << "\n\n  The first word you entered, " << word1 << ", is longer than the second, ";
+			cout << "\n\n  The first word you entered, \"" << word1 << "\", is longer than the second, ";
 			cout << "with a grand total length of " << word1.length() << " characters.";
 		}
 
-		if (word1.length() < word2.length())
+		else if (word1.length() < word2.length())
 		{
-			cout << "\n\n  The second word you entered, " << word2 << ", is longer than the first, ";
-			cout << "with a grand total length of " << word2.length() << " characters.";
+			cout << "\n\n  The second word you entered, \"" << word2 << "\", is longer than the first word you entered, ";
+			cout << "\n   and has a grand total length of " << word2.length() << " characters.";
 		}
 
-		if (word1.length() == word2.length())
+		else if (word1.length() == word2.length())
 		{
 			cout << "\n\n  Both of the words you entered are the same length, with a length of " << word1.length() << " characters!";
 		}
